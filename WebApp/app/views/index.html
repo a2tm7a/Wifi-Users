@@ -1,0 +1,19 @@
+<html>
+	<head>
+	<title>{{title}}</title>
+	</head>
+	<body>
+		<h5>
+		
+		<table border="1">
+		<tr>
+		<td>Name</td><td>ID</td><td>Time (in mins )</td></tr>
+		{% for user in connected_devices %}
+		<tr><td>{{ user.Name }}</td><td>{{ user.MAC_Address }}</td><td>{{user.Time}}</td></tr>
+		{% endfor %}
+		</table>
+
+		</h5>
+	</body>
+
+</html>
