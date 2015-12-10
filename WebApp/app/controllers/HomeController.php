@@ -16,9 +16,11 @@
 		public function get()
 		{
 			$connected_devices=GetData::getData();
+			$online_devices=GetData::onlineDevices();
 			echo $this->twig->render('index.html', array(
 				"title" => "Time",
-				"connected_devices" => $connected_devices)) ;
+				"connected_devices" => $connected_devices,
+				"online_devices" => $online_devices)) ;
 		}
 
 	}

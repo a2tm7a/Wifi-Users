@@ -16,4 +16,14 @@
 
 			return $connected_devices;
 		}
+		public static function onlineDevices()
+		{
+			$db = DBConnect::getDB();
+			$devices = $db->prepare("SELECT NAME, MAC_Address FROM Detect WHERE ONLINE = TRUE");
+			$devices -> execute();
+			$row = $devices->fetchAll(\PDO::FETCH_ASSOC);
+			$online_Devices=$row;
+
+			return $online_Devices;
+		}
 	}	

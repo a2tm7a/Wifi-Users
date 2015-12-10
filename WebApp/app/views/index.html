@@ -4,12 +4,23 @@
 	</head>
 	<body>
 		<h5>
-		
+		<h2>Time the person was connected to wifi</h2>
 		<table border="1">
 		<tr>
-		<td>Name</td><td>ID</td><td>Time (in mins )</td></tr>
+		<td>Name</td><td>MAC Address</td><td>Time (in mins )</td><td>Last Seen At</td></tr>
 		{% for user in connected_devices %}
-		<tr><td>{{ user.Name }}</td><td>{{ user.MAC_Address }}</td><td>{{user.Time}}</td></tr>
+		<tr><td>{{ user.Name }}</td><td>{{ user.MAC_Address }}</td><td>{{user.Time}}</td><td>{{user.LastSeen}}</td></tr>
+		{% endfor %}
+		</table>
+		
+		<br>
+
+		<h2>Online Devices</h2>
+		<table border="1">
+		<tr>
+		<td>Name</td><td>MAC Address</td></tr>
+		{% for user in online_devices %}
+		<tr><td>{{ user.Name }}</td><td>{{ user.MAC_Address }}</td></tr>
 		{% endfor %}
 		</table>
 
