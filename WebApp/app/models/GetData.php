@@ -1,16 +1,17 @@
 <?php
 
 	namespace Models;
+
 	use Models\DBConnect;
 
-	class UpdateData
+	class GetData
  	{
- 		public static function getData($name , $id)
+ 		public static function getData()
  		{
  			$db = DBConnect::getDB() ;
 			$device = $db->prepare("SELECT * FROM Detect") ;
  			$device->execute();
- 			$row=$add_user->fetchAll(\PDO::FETCH_ASSOC);
+ 			$row=$device->fetchAll(\PDO::FETCH_ASSOC);
 			$connected_devices=$row;
 
 			return $connected_devices;

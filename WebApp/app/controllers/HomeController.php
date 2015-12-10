@@ -15,7 +15,7 @@
 
 		public function get()
 		{
-			$connected_devices=GetData::getDetails();
+			$connected_devices=GetData::getData();
 			echo $this->twig->render('index.html', array(
 				"title" => "Time",
 				"connected_devices" => $connected_devices)) ;
