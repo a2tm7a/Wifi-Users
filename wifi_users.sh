@@ -15,6 +15,10 @@ INSERT INTO Detect
 SELECT * FROM temporary_detect
 ON DUPLICATE KEY UPDATE Time = Detect.Time + 2;
 
+UPDATE Detect SET Online=False;
+
+UPDATE Detect SET LastSeen = NOW(), Online = TRUE WHERE MAC_Address IN (SELECT MAC_Address FROM temporary_detect);
+
 SELECT * FROM Detect;
 EOFMYSQL
 
