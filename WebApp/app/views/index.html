@@ -13,8 +13,10 @@
 		{% endfor %}
 		</table>
 		
-		<br>
-
+		<br />
+		<br />
+		<br />
+		
 		<h2>Online Devices</h2>
 		<table border="1">
 		<tr>
@@ -23,6 +25,24 @@
 		<tr><td>{{ user.Name }}</td><td>{{ user.MAC_Address }}</td></tr>
 		{% endfor %}
 		</table>
+
+		<br />
+		<br />
+		<br />
+		
+		<h2>Fill in the names for unknown MAC Address</h2>
+		<form action="/filldata" method="post">
+		    Name:  <input type="text" name="username" /><br /><br />
+		    MAC Address: 
+		    <select name="mac_address">
+		    	{% for user in devices_without_name %}
+					<option >{{ user.MAC_Address }}</option>
+				{% endfor %}
+		    </select><br/><br />
+		    <input type="submit" value="SUBMIT" />
+		</form>
+
+		
 
 		</h5>
 	</body>

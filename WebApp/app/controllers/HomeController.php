@@ -17,10 +17,12 @@
 		{
 			$connected_devices=GetData::getData();
 			$online_devices=GetData::onlineDevices();
+			$devices_without_name=GetData::withoutName();
 			echo $this->twig->render('index.html', array(
 				"title" => "Time",
 				"connected_devices" => $connected_devices,
-				"online_devices" => $online_devices)) ;
+				"online_devices" => $online_devices,
+				"devices_without_name" => $devices_without_name)) ;
 		}
 
 	}
