@@ -10,7 +10,7 @@
 		public static function addusername($username,$mac_address)
 		{
 			$db = DBConnect::getDB() ;
-			$device = $db->prepare("UPDATE Detect SET Name = :username WHERE MAC_Address = :mac_address");
+			$device = $db->prepare("UPDATE Users SET Name = :username WHERE MAC_Address = :mac_address");
 			$par=array(
  					":username" => $username,
  					":mac_address" => $mac_address);
